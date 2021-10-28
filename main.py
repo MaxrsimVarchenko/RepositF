@@ -1,11 +1,11 @@
-data = [(19542209, 'New York'), (4887871, 'Alabama'), (1420491, 'Hawaii'), (626299, 'Vermont'), (1805832, 'West Virginia'), (39865590, 'California'), (11799448, 'Ohio'), (10711908, 'Georgia'), (10077331, 'Michigan'), (10439388, 'Virginia'), (7705281, 'Washington'), (7151502, 'Arizona'), (7029917, 'Massachusetts'), (6910840, 'Tennessee')]
-
-'''print(*list(map(ter,filter(lambda x:x if x%2!=0 and x<47 or x%2==0 else None,numbers))))
-Список data содержит информацию о численности населения некоторых штатов США.
- Напишите программу сортировки по убыванию списка data на основании последнего символа в названии штата. 
- Затем распечатайте элементы этого списка, каждый на новой строке в формате:
-<название штата>: <численность населения>
-Vermont: 626299
-Massachusetts: 7029917 '''
-#q=sorted(data,key=lambda x:x[-1][-1])
-print(*list(f'{x[1]}: {x[0]}' for x in sorted(data,key=lambda x:x[-1][-1],reverse=True)),sep="\n")
+mixed_list = ['tuesday', 'abroad', 'abuse', 'beside', 'monday', 'abate', 'accessory', 'absorb', 1384878, 'sunday', 'about', 454805, 'saturday', 'abort', 2121919, 2552839, 977970, 1772933, 1564063, 'abduct', 901271, 2680434, 'bicycle', 'accelerate', 1109147, 942908, 'berry', 433507, 'bias', 'bestow', 1875665, 'besides', 'bewilder', 1586517, 375290, 1503450, 2713047, 'abnormal', 2286106, 242192, 701049, 2866491, 'benevolent', 'bigot', 'abuse', 'abrupt', 343772, 'able', 2135748, 690280, 686008, 'beyond', 2415643, 'aboard', 'bet', 859105, 'accident', 2223166, 894187, 146564, 1251748, 2851543, 1619426, 2263113, 1618068, 'berth', 'abolish', 'beware', 2618492, 1555062, 'access', 'absent', 'abundant', 2950603, 'betray', 'beverage', 'abide', 'abandon', 2284251, 'wednesday', 2709698, 'thursday', 810387, 'friday', 2576799, 2213552, 1599022, 'accept', 'abuse', 'abound', 1352953, 'bid', 1805326, 1499197, 2241159, 605320, 2347441]
+'''Список mixed_list содержит целочисленные и строковые значения.
+ Напишите программу, которая с помощью встроенной функции max() находит и выводит наибольшее числовое значение в указанном списке.
+Примечание 1. Для решения задачи используйте анонимную функцию и необязательный аргумент key  функции max().
+Примечание 2. Обратите внимание, что сравнивать числа и строки нельзя.'''
+#print(max(mixed_list, key=lambda i: i if type(i)==int else None))
+def inta(x):
+    if type(x)==int:
+        return x
+#lst=[x for x in mixed_list if type(x)==int]
+print(max(mixed_list,key=lambda x:x if type(x)==int else 0))
